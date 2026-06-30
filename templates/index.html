@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network Port Scanner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌐 Network Port Scanner</h1>
+
+    <p class="subtitle">
+        Scan Open Ports on a Host
+    </p>
+
+    <div class="card">
+
+        <label>Target IP Address / Hostname</label>
+
+        <input
+            type="text"
+            id="target"
+            placeholder="Example: 127.0.0.1">
+
+        <label>Start Port</label>
+
+        <input
+            type="number"
+            id="start_port"
+            placeholder="20">
+
+        <label>End Port</label>
+
+        <input
+            type="number"
+            id="end_port"
+            placeholder="100">
+
+        <button onclick="scanPorts()">
+
+            Scan Ports
+
+        </button>
+
+        <div class="results">
+
+            <h2 id="status">
+                Waiting for Scan...
+            </h2>
+
+            <div class="progress">
+
+                <div id="progress-bar"></div>
+
+            </div>
+
+            <p>
+
+                <strong>Target :</strong>
+
+                <span id="targetResult">-</span>
+
+            </p>
+
+            <p>
+
+                <strong>IP Address :</strong>
+
+                <span id="ipResult">-</span>
+
+            </p>
+
+            <p>
+
+                <strong>Open Ports :</strong>
+
+            </p>
+
+            <ul id="portsList">
+
+            </ul>
+
+            <p>
+
+                <strong>Total Open Ports :</strong>
+
+                <span id="totalPorts">0</span>
+
+            </p>
+
+            <p>
+
+                <strong>Scan Time :</strong>
+
+                <span id="scanTime">0 sec</span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
